@@ -1,0 +1,16 @@
+.headerMargin {
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.onHover:hover {
+    cursor: pointer;
+}
+
+.marginTop {
+    margin-top: 10px;
+}

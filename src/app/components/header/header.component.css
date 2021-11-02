@@ -1,0 +1,13 @@
+.navbar {
+    height: 80px;
+    background-color: black;
+}
+
+.text {
+    color: white;
+    margin-left: 20px;
+}
+
+.alignImg {
+    margin-left: 20px;
+}

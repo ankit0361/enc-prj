@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table table-bordered table-responsive headerMargin">
+        <thead>
+            <tr>
+                <th scope="col" class="alignCenter">S.No</th>
+                <th scope="col" class="alignCenter">Name</th>
+                <th scope="col" class="alignCenter">Logo</th>
+                <th scope="col" class="alignCenter">Description</th>
+                <th scope="col" class="alignCenter">Person Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let company of companyDetails; let i = index">
+                <th class="alignCenter" scope="row">{{i + 1}}</th>
+                <td class="alignCenter">{{company.name}}</td>
+                <td class="alignCenter">
+                    <img src="{{company.logo}}" width="80px" height="30px" alt="{{company.name}}">
+                </td>
+
+                <td class="alignCenter">{{company.description}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="navigateToCompanyDetails(company.id)">View Contact Details </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

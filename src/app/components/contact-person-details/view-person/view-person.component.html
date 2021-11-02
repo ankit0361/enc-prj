@@ -1,0 +1,47 @@
+<div class="container">
+    <form name="contactForm">
+        <div class="person-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <span class="asteric">*</span>
+                        <input type="text" name="name" [(ngModel)]="name" id="name" required class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <div class="form-group">
+                        <label>Country</label>
+                        <span class="asteric">*</span>
+                        <input type="text" name="country" [(ngModel)]="country" id="country" required
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <span class="asteric">*</span>
+                        <input (keypress)="numberOnly($event)" type="text" name="phone" maxlength="10" pattern="\d{10}"
+                            [(ngModel)]="phone" id="phone" required class="form-control">
+                        <div class="error" *ngIf="phone && phone.length < 10">
+                            Phone Number should be of length 10.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto mt-3">
+                    <div class="form-group">
+                        <button class="btn btn-primary pull-right" [disabled]="!name || !phone || !country"
+                            (click)="addPerson()" *ngIf="isNewPerson">Submit</button>
+                        <button class="btn btn-primary pull-right" [disabled]="!name || !phone || !country"
+                            (click)="editPerson()" *ngIf="!isNewPerson">Update</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <div class="form-group">
+                        <button class="btn btn-primary pull-right" (click)="navigateToPreviousScreen()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
